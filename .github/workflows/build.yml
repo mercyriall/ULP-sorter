@@ -39,3 +39,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ULP-sorter.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
