@@ -30,12 +30,12 @@ jobs:
       - name: Create ZIP
         run: |
           mkdir package
-          copy dist\main.exe package\
-          xcopy /E /I dir1 package\dir1\
-          xcopy /E /I dir2 package\dir2\
+          copy dist\ulp-sorter.exe package\
+          xcopy /E /I INP package\INP\
+          xcopy /E /I OUT package\OUT\
           powershell Compress-Archive -Path package\* -DestinationPath ULP-sorter.zip
 
       - name: Upload ZIP to Release
         uses: softprops/action-gh-release@v1
         with:
-          files: MyProject_v${GITHUB_REF_NAME}.zip
+          files: ULP-sorter.zip
