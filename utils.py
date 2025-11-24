@@ -57,7 +57,8 @@ def save_list(sorted_list: list,
         for name in os.listdir(settings["output_dir"]):
             file_path = os.path.join(settings["output_dir"], name)
             if os.path.isfile(file_path):
-                os.remove(file_path)
+                if ".gitkeep" not in name:
+                    os.remove(file_path)
 
 
         index: int = 0
