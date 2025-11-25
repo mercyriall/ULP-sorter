@@ -30,4 +30,4 @@ jobs:
       - name: Upload EXE to Release
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/ulp-sort.exe
+          files: dist/ulp-sorter.exe
