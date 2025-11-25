@@ -1,4 +1,4 @@
-name: Build EXE and ZIP
+name: Build EXE
 
 on:
   push:
@@ -16,29 +16,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt pyinstaller
+      - name: Install deps
+        run: pip install pyinstaller
 
-      - name: Build EXE with icon and extra directories
-        run: pyinstaller --onefile main.py --name ulp-sorter --icon=icon.ico --add-data "INP;INP" --add-data "OUT;OUT"
+      - name: Build EXE
+        run: pyinstaller --onefile main.py --name ulp-sorter --ico icon.ico
 
-      - name: Create folder
-        run: |
-          mkdir package
-          copy dist\ulp-sorter.exe package\
-          xcopy /E /I INP package\INP\
-          xcopy /E /I OUT package\OUT\
-
-      - name: Create zip
-        shell: pwsh
-        run: Compress-Archive -Path "package/*" -DestinationPath "ULP-sorter.zip"
-
-      - name: Upload ZIP to Release
+      - name: Upload EXE to Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ULP-sorter.zip
+          files: dist/ulp-sort.exe
