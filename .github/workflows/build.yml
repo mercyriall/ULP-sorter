@@ -30,9 +30,11 @@ jobs:
       - name: Create folder
         run: |
           mkdir package
-          copy build package\
+          copy dist\ulp-sorter.exe package\
           xcopy /E /I INP package\INP\
           xcopy /E /I OUT package\OUT\
+          xcopy /E /I settings.json package\
+          xcopy /E /I badtlds.txt package\
 
       - name: Create zip
         shell: pwsh
