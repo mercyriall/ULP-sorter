@@ -34,7 +34,7 @@ jobs:
           xcopy /E /I INP package\INP\
           xcopy /E /I OUT package\OUT\
           xcopy /E /I settings.json package\
-          xcopy /E /I badtlds.txt package\
+          xcopy /E /I bad_tlds.txt package\
 
       - name: Create zip
         shell: pwsh
