@@ -25,7 +25,7 @@ jobs:
         run: pip install -r requirements.txt pyinstaller
 
       - name: Build EXE with icon and extra directories
-        run: pyinstaller --onefile main.py --name ulp-sorter --icon=icon.ico"
+        run: pyinstaller --onefile main.py --name ulp-sorter --icon=icon.ico
 
       - name: Create folder
         run: |
