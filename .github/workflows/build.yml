@@ -25,12 +25,12 @@ jobs:
         run: pip install -r requirements.txt pyinstaller
 
       - name: Build EXE with icon and extra directories
-        run: pyinstaller --onefile main.py --name ulp-sorter --icon=icon.ico --add-data "INP;INP" --add-data "OUT;OUT"
+        run: pyinstaller --onefile main.py --name ulp-sorter --icon=icon.ico"
 
       - name: Create folder
         run: |
           mkdir package
-          copy dist\ulp-sorter.exe package\
+          copy build package\
           xcopy /E /I INP package\INP\
           xcopy /E /I OUT package\OUT\
 

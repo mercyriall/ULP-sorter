@@ -1,7 +1,7 @@
 {
   "input_dir": "INP",
   "output_dir": "OUT",
-  "restrictions_lines_per_one_file": 40,
+  "restrictions_lines_per_one_file": 10000000,
   "useful_endpoints": [
     "/wp-admin", "/wp-login.php", "wp-login"
   ],
