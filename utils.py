@@ -21,8 +21,6 @@ def get_input_files() -> list:
         if os.path.isfile(os.path.join(dir_path, f)) and not f.startswith(".")
     ]
 
-    print(files_name)
-
     return files_name
 
 
@@ -30,7 +28,7 @@ def sorting_ulp_list(file_name: str) -> list:
     sorted_list: list = []
 
     tmp = False
-    print(f"{settings["input_dir"]}/{file_name}")
+
     with open(f"{settings["input_dir"]}/{file_name}", "r", encoding="utf-8", errors="replace") as file:
         with open(f"{settings["bad_tlds_list"]}", "r", encoding="utf-8") as bad_tlds:
             bad_tlds = bad_tlds.readlines()

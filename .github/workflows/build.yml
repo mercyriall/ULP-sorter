@@ -31,7 +31,6 @@ jobs:
         run: |
           mkdir package
           copy dist\ulp-sorter.exe package\
-          Copy-Item -Path "build" -Destination "package\build" -Recurse -Force
           Copy-Item -Path "INP" -Destination "package\INP" -Recurse -Force
           Copy-Item -Path "OUT" -Destination "package\OUT" -Recurse -Force
           Copy-Item -Path "settings.json" -Destination "package\" -Force

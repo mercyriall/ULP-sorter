@@ -28,9 +28,7 @@ def run():
     for i in range(len(files_name)):
         sorted_list.extend(sorting_ulp_list(files_name[i]))
         if not sorted_list:
-            print(f"{Fore.RED}=={files_name[i]} is empty==")
-            input("==Any button for exit==")
-            return 0
+            continue
 
         if len(sorted_list) >= settings["restrictions_lines_per_one_file"] \
             or i == len(files_name) - 1:
